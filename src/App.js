@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
+import PcBuilder from "./components/pc-builder/PcBuilder";
 
 function App() {
   return (
-    <div className="App">
-      app
-    </div>
+    <PcBuilder/>
   );
 }
 
