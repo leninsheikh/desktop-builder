@@ -4,6 +4,8 @@ import Container from "@material-ui/core/Container";
 import ComponentHeader from "./ComponentHeader";
 import ComponentList from "./ComponentList";
 import Hidden from "@material-ui/core/Hidden";
+import MenuBar from "./MenuBar";
+import {Box} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,11 +17,17 @@ export default function CenteredGrid() {
     const classes = useStyles();
 
     return (
-        <Container maxWidth='lg' className={classes.root}>
-            <Hidden xsDown>
-                <ComponentHeader/>
-            </Hidden>
-            <ComponentList/>
-        </Container>
+        <>
+            <MenuBar/>
+            <Container maxWidth='xl' className={classes.root}>
+                <Hidden xsDown>
+                    <ComponentHeader/>
+                </Hidden>
+                <Box mt={1}>
+                    <ComponentList/>
+                </Box>
+            </Container>
+        </>
+
     );
 }

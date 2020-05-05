@@ -40,30 +40,32 @@ const ComponentItem = props => {
         return <ComponentItemEmpty type={props.type}/>
     }
     return (
-        <Paper>
-            <Box py={1}>
-                <Grid container>
-                    <Grid className={classes.component} item sm xs={8}>
-                        <div className={classes.paper}>{props.type}</div>
+        <Box my={1}>
+            <Paper>
+                <Box py={2}>
+                    <Grid container>
+                        <Grid className={classes.component} item sm xs={8}>
+                            <div className={classes.paper}>{props.type}</div>
+                        </Grid>
+                        <Hidden smUp>
+                            <Grid item className={classes.cell} xs={4}>
+                                <div className={classes.paper}>
+                                    <Action/>
+                                </div>
+                            </Grid>
+                        </Hidden>
+                        <ComponentDetails/>
+                        <Hidden xsDown>
+                            <Grid item className={classes.cell} sm>
+                                <div className={classes.paper}>
+                                    <Action/>
+                                </div>
+                            </Grid>
+                        </Hidden>
                     </Grid>
-                    <Hidden smUp>
-                        <Grid item className={classes.cell} xs={4}>
-                            <div className={classes.paper}>
-                                <Action/>
-                            </div>
-                        </Grid>
-                    </Hidden>
-                    <ComponentDetails/>
-                    <Hidden xsDown>
-                        <Grid item className={classes.cell} sm>
-                            <div className={classes.paper}>
-                                <Action/>
-                            </div>
-                        </Grid>
-                    </Hidden>
-                </Grid>
-            </Box>
-        </Paper>
+                </Box>
+            </Paper>
+        </Box>
     );
 }
 

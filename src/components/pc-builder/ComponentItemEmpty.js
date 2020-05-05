@@ -34,7 +34,7 @@ const EmptyComponent = props =>  {
     const classes = useStyles();
     return (
         <Paper>
-            <Box py={1}>
+            <Box py={2}>
                 <Grid container>
                     <Grid className={classes.component} item sm={10} xs={8}>
                         <div className={classes.paper}>{props.type}</div>
