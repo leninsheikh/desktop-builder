@@ -35,7 +35,7 @@ export default function MenuBar() {
                         <Typography variant="h5" className={classes.title}>
                             Build Your PC
                         </Typography>
-
+                    <SavedPC/>
                     <Button
                         color="inherit"
                         startIcon={<SaveIcon />}
@@ -48,4 +48,37 @@ export default function MenuBar() {
     );
 }
 
+const SavedPC =  props => {
+    const [anchorEl, setAnchorEl] = React.useState(null);
 
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    return (
+        <div>
+            <Button
+                color="inherit"
+                aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}
+                startIcon={<AutorenewIcon />}
+            >
+                load
+            </Button>
+            <Menu
+                id="simple-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+            >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
+            </Menu>
+        </div>
+    );
+}
