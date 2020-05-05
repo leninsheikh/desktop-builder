@@ -23,7 +23,7 @@ export default function CenteredGrid() {
                 <Hidden xsDown>
                     <ComponentHeader/>
                 </Hidden>
-                <Box >
+                <Box mt={1}>
                     <ComponentList/>
                 </Box>
             </Container>
