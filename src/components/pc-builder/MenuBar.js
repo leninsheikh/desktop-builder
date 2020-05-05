@@ -75,9 +75,9 @@ const SavedPC =  props => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                <MenuItem onClick={handleClose}>Gaming PC</MenuItem>
+                <MenuItem onClick={handleClose}>Work Station</MenuItem>
+                <MenuItem onClick={handleClose}>Budget PC</MenuItem>
             </Menu>
         </div>
     );
