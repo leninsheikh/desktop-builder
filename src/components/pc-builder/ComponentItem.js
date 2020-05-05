@@ -40,7 +40,7 @@ const ComponentItem = props => {
         return <ComponentItemEmpty type={props.type}/>
     }
     return (
-        <Box my={1}>
+        <Box mb={1}>
             <Paper>
                 <Box py={2}>
                     <Grid container>
