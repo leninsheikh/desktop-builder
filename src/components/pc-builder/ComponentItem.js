@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     cell: {
         textAlign: 'right',
         display: 'flex',
-        justifyContent: 'flex-end'
+        justifyContent: 'center'
     },
     image: {
         width: 'auto',

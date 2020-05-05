@@ -19,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         paddingLeft: '10px'
     },
-    actions: {
+    cell: {
         textAlign: 'right',
         display: 'flex',
-        justifyContent: 'flex-end'
+        justifyContent: 'center'
     },
     image: {
         width: 'auto',
@@ -40,14 +40,14 @@ const EmptyComponent = props =>  {
                         <div className={classes.paper}>{props.type}</div>
                     </Grid>
                     <Hidden smUp>
-                        <Grid item className={classes.actions} xs={4}>
+                        <Grid item className={classes.cell} xs={4}>
                             <div className={classes.paper}>
                                 <Action/>
                             </div>
                         </Grid>
                     </Hidden>
                     <Hidden xsDown>
-                        <Grid item className={classes.actions} sm={2}>
+                        <Grid item className={classes.cell} sm={2}>
                             <div className={classes.paper}>
                                 <Action/>
                             </div>
