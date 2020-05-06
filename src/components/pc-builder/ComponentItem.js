@@ -67,7 +67,7 @@ const ComponentItem = props => {
             </Paper>
         </Box>
     );
-}
+};
 
 const ComponentDetails = (props) => {
     const classes = useStyles();
@@ -91,7 +91,6 @@ const ComponentDetails = (props) => {
     )
 };
 const Action = (props) => {
-    const classes = useStyles();
     return (
         <div>
             <IconButton aria-label="delete">

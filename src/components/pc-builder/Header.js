@@ -7,7 +7,7 @@ import SaveIcon from '@material-ui/icons/Save';
 import AutorenewIcon from '@material-ui/icons/Autorenew';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import WithMenuBar from "../hoc/MenuBar";
+import withMenuBar from "../hoc/withMenuBar";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,11 +23,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function MenuBar() {
+const  Header = props =>  {
     const classes = useStyles();
 
     return (
-        <WithMenuBar>
+        <>
             <DesktopMacIcon/>
             <Typography variant="h5" className={classes.title}>
                 Build Your PC
@@ -39,9 +39,9 @@ export default function MenuBar() {
             >
                 save
             </Button>
-        </WithMenuBar>
+        </>
     );
-}
+};
 
 const SavedPC = props => {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -76,4 +76,8 @@ const SavedPC = props => {
             </Menu>
         </div>
     );
-}
+};
+
+
+
+export default withMenuBar(Header)

@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container";
 import ComponentHeader from "./ComponentHeader";
 import ComponentList from "./ComponentList";
 import Hidden from "@material-ui/core/Hidden";
-import MenuBar from "./MenuBar";
+import MenuBar from "./Header";
 import {Box} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
