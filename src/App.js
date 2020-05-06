@@ -1,10 +1,8 @@
 import React from 'react';
-import './App.css';
-import PcBuilder from "./components/pc-builder/PcBuilder";
-
+import Router from './router'
 function App() {
   return (
-    <PcBuilder/>
+    <Router/>
   );
 }
 
