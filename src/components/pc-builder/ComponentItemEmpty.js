@@ -7,6 +7,8 @@ import Hidden from "@material-ui/core/Hidden";
 import Button from "@material-ui/core/Button";
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import PropTypes from "prop-types";
+import { useHistory } from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
     component: {
@@ -32,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 const EmptyComponent = props =>  {
     const classes = useStyles();
+
     return (
         <Paper>
             <Box py={2}>
@@ -42,14 +45,14 @@ const EmptyComponent = props =>  {
                     <Hidden smUp>
                         <Grid item className={classes.cell} xs={4}>
                             <div className={classes.paper}>
-                                <Action/>
+                                <Action type={props.type}/>
                             </div>
                         </Grid>
                     </Hidden>
                     <Hidden xsDown>
                         <Grid item className={classes.cell} sm={2}>
                             <div className={classes.paper}>
-                                <Action/>
+                                <Action type={props.type}/>
                             </div>
                         </Grid>
                     </Hidden>
@@ -61,12 +64,17 @@ const EmptyComponent = props =>  {
 
 const Action = (props) => {
     const classes = useStyles();
+    let router = useHistory();
+
+    const onChoose = () => router.push(`select-component?component=${props.type.toLowerCase()}`);
+
     return (
         <div className={classes.actions}>
             <Button
                 color="secondary"
                 className={classes.button}
                 startIcon={<AddCircleIcon />}
+                onClick={onChoose}
             >
                 Choose
             </Button>
