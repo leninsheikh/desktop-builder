@@ -7,6 +7,7 @@ import {
 
 import HomePage from "../pages/HomePage";
 import TestPage from "../pages/TestPage";
+import SelectComponentPage from "../pages/SelectComponentPage";
 
 export default () => {
     return (
@@ -17,6 +18,9 @@ export default () => {
                 </Route>
                 <Route  path='/test'>
                     <TestPage/>
+                </Route>
+                <Route  path='/select-component'>
+                    <SelectComponentPage/>
                 </Route>
             </Switch>
         </Router>
