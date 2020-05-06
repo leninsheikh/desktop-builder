@@ -21,6 +21,12 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         marginLeft: theme.spacing(1),
     },
+    titleText: {
+        display: 'none',
+        [theme.breakpoints.up('sm')]: {
+            display: 'block',
+        },
+    },
 }));
 
 const  Header = props =>  {
@@ -30,7 +36,7 @@ const  Header = props =>  {
         <>
             <DesktopMacIcon/>
             <Typography variant="h5" className={classes.title}>
-                Build Your PC
+                <span className={classes.titleText}>Build Your PC</span>
             </Typography>
             <SavedPC/>
             <Button
