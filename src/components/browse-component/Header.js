@@ -6,6 +6,7 @@ import InputBase from '@material-ui/core/InputBase';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import SearchIcon from '@material-ui/icons/Search';
 import withMenuBar from "../hoc/withMenuBar";
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -60,6 +61,14 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
     const classes = useStyles();
+    let history = useHistory();
+
+    /**
+     * go back to home page
+     *
+     * @returns {void | boolean | * | number}
+     */
+    const onBack = () => history.push('/');
 
     return (
         <>
@@ -68,6 +77,7 @@ const Header = () => {
                 className={classes.menuButton}
                 color="inherit"
                 aria-label="open drawer"
+                onClick={onBack}
             >
                 <ArrowBackIcon/>
             </IconButton>
