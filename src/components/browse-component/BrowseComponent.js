@@ -3,6 +3,6 @@ import Header from './Header'
 
 export default props => {
     return (
-        <Header/>
+        <Header component={props.component} />
     )
 }

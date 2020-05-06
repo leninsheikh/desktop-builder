@@ -12,13 +12,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default Component => {
 
-    return () => {
+    return (props) => {
         const classes = useStyles();
         return (
             <div className={classes.root}>
                 <AppBar position="static">
                     <Toolbar>
-                        <Component/>
+                        <Component {...props} />
                     </Toolbar>
                 </AppBar>
             </div>

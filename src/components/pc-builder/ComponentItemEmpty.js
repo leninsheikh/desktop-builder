@@ -66,7 +66,7 @@ const Action = (props) => {
     const classes = useStyles();
     let router = useHistory();
 
-    const onChoose = () => router.push(`select-component?component=${props.type.toLowerCase()}`);
+    const onChoose = () => router.push(`select-component?component=${props.type}`);
 
     return (
         <div className={classes.actions}>
