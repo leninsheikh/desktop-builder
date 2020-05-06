@@ -1,7 +1,5 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import DesktopMacIcon from '@material-ui/icons/DesktopMac';
@@ -9,6 +7,7 @@ import SaveIcon from '@material-ui/icons/Save';
 import AutorenewIcon from '@material-ui/icons/Autorenew';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import WithMenuBar from "../hoc/MenuBar";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,27 +27,23 @@ export default function MenuBar() {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <AppBar position="static">
-                <Toolbar>
-                    <DesktopMacIcon/>
-                        <Typography variant="h5" className={classes.title}>
-                            Build Your PC
-                        </Typography>
-                    <SavedPC/>
-                    <Button
-                        color="inherit"
-                        startIcon={<SaveIcon />}
-                    >
-                        save
-                    </Button>
-                </Toolbar>
-            </AppBar>
-        </div>
+        <WithMenuBar>
+            <DesktopMacIcon/>
+            <Typography variant="h5" className={classes.title}>
+                Build Your PC
+            </Typography>
+            <SavedPC/>
+            <Button
+                color="inherit"
+                startIcon={<SaveIcon/>}
+            >
+                save
+            </Button>
+        </WithMenuBar>
     );
 }
 
-const SavedPC =  props => {
+const SavedPC = props => {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = (event) => {
@@ -64,7 +59,7 @@ const SavedPC =  props => {
             <Button
                 color="inherit"
                 aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}
-                startIcon={<AutorenewIcon />}
+                startIcon={<AutorenewIcon/>}
             >
                 load
             </Button>
